@@ -1,6 +1,5 @@
-
-import React from 'react';
-import { useLoaderData, Link } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 interface User {
   id: number;

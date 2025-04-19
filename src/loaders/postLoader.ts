@@ -1,8 +1,12 @@
-export async function postLoader({ params }) {
+import { LoaderFunctionArgs } from 'react-router-dom';
+
+export async function postLoader({ params }: LoaderFunctionArgs) {
+  const { userId, postId } = params;
+  
   const [postResponse, commentsResponse, userResponse] = await Promise.all([
-    fetch(`https://jsonplaceholder.typicode.com/posts/${params.postId}`),
-    fetch(`https://jsonplaceholder.typicode.com/posts/${params.postId}/comments`),
-    fetch(`https://jsonplaceholder.typicode.com/users/${params.userId}`)
+    fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`),
+    fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`),
+    fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
   ]);
 
   const [post, comments, user] = await Promise.all([

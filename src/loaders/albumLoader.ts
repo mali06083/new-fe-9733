@@ -1,15 +1,12 @@
-interface LoaderParams {
-  params: {
-    userId: string;
-    albumId: string;
-  };
-}
+import { LoaderFunctionArgs } from 'react-router-dom';
 
-export async function albumLoader({ params }: LoaderParams) {
+export async function albumLoader({ params }: LoaderFunctionArgs) {
+  const { userId, albumId } = params;
+  
   const [albumResponse, photosResponse, userResponse] = await Promise.all([
-    fetch(`https://jsonplaceholder.typicode.com/albums/${params.albumId}`),
-    fetch(`https://jsonplaceholder.typicode.com/albums/${params.albumId}/photos`),
-    fetch(`https://jsonplaceholder.typicode.com/users/${params.userId}`)
+    fetch(`https://jsonplaceholder.typicode.com/albums/${albumId}`),
+    fetch(`https://jsonplaceholder.typicode.com/albums/${albumId}/photos`),
+    fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
   ]);
 
   const [album, photos, user] = await Promise.all([
