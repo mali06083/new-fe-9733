@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { useFavorites } from '../store/favorites';
 import './Layout.css';
