@@ -1,0 +1,16 @@
+:root {
+  --primary-color: #2563eb;
+  --secondary-color: #f43f5e;
+  --background-color: #f8fafc;
+  --card-background: #ffffff;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --border-color: #e2e8f0;
+  --hover-color: #f1f5f9;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, sans-serif;
+} 
