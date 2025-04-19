@@ -6,8 +6,12 @@ interface User {
   name: string;
 }
 
+interface UsersData {
+  users: User[];
+}
+
 function Users() {
-  const users = useLoaderData() as User[];
+  const { users } = useLoaderData() as UsersData;
 
   return (
     <div>
